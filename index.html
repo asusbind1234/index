@@ -57,39 +57,33 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
-            padding: 20px;
+            gap: 10px;
+            padding: 10px;
             margin: 0 auto;
-            max-width: 1200px;
+            max-width: 95%;
         }
 
         .car {
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: calc(33.33% - 20px);
+            padding: 10px;
+            width: calc(50% - 10px);
             text-align: center;
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .car:hover {
-            transform: translateY(-5px);
+            margin-bottom: 10px;
         }
 
         .car img {
             max-width: 100%;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .order-button {
             background-color: #009688;
             color: #fff;
             border: none;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
@@ -108,58 +102,6 @@
             padding: 10px 0;
             width: 100%;
             margin-top: auto;
-        }
-
-        .contact-form {
-            margin-top: auto;
-            text-align: center;
-        }
-
-        .contact-form form {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .contact-form input[type="text"],
-        .contact-form input[type="tel"],
-        .contact-form textarea {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .contact-form textarea {
-            height: 100px;
-        }
-
-        .contact-form input[type="submit"] {
-            background-color: #009688;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-form input[type="submit"]:hover {
-            background-color: #00796b;
-        }
-
-        .success-message {
-            display: none;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            margin-top: 20px;
-            border-radius: 5px;
-            font-weight: bold;
         }
 
         .manager-card {
@@ -220,30 +162,13 @@
             background-color: #ff3b4c;
         }
 
-        /* CSS for Anton's info */
-        #anton-info {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 300px;
-            text-align: center;
-            display: none;
-        }
-
-        #anton-info h2 {
-            color: #009688;
-            margin-top: 0;
-        }
-
-        #anton-info p {
-            color: #666;
-            margin-bottom: 10px;
+        .free-for-anton {
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -258,47 +183,47 @@
     </nav>
     <main id="catalog">
         <section class="car-list">
-            <div class="car" onclick="showAntonInfo()">
+            <div class="car">
                 <h3>BMW i4 2022</h3>
                 <img src="https://cdn2.riastatic.com/photosnew/auto/photo/bmw_i4__483767977f.webp" alt="Машина 1">
                 <p class="price">Цена: $<span>51 999</span></p>
-                <a href="#contact" class="order-button">Заказать</a>
+                <a href="#contact" class="order-button" onclick="showFreeForAnton()">Заказать</a>
             </div>
             <div class="car">
                 <h3>Mercedes-Benz E-Class 2017</h3>
                 <img src="https://cdn2.riastatic.com/photosnew/auto/photo/mercedes-benz_e-class__531863307f.webp" alt="Машина 2">
                 <p class="price">Цена: $<span>22 000</span></p>
-                <a href="#contact" class="order-button">Заказать</a>
+                <a href="#contact" class="order-button" onclick="showFreeForAnton()">Заказать</a>
             </div>
-            <div class="car" onclick="showAntonInfo()">
+            <div class="car">
                 <h3>Porsche Panamera 2010</h3>
                 <img src="https://cdn3.riastatic.com/photosnew/auto/photo/porsche_panamera__531132388f.webp" alt="Машина 3">
                 <p class="price">Цена: <span>Для Антона бесплатно.</span></p>
-                <a href="#contact" class="order-button">Заказать</a>
+                <a href="#contact" class="order-button" onclick="showFreeForAnton()">Заказать</a>
             </div>
             <div class="car">
                 <h3>Toyota Land Cruiser Prado 2007</h3>
                 <img src="https://cdn4.riastatic.com/photosnew/auto/photo/toyota_land-cruiser-prado__536132154f.webp" alt="Машина 4">
                 <p class="price">Цена: $<span>16 200</span></p>
-                <a href="#contact" class="order-button">Заказать</a>
+                <a href="#contact" class="order-button" onclick="showFreeForAnton()">Заказать</a>
             </div>
             <div class="car">
                 <h3>Mitsubishi Eclipse Cross 2020</h3>
                 <img src="https://cdn0.riastatic.com/photosnew/auto/photo/mitsubishi_eclipse-cross__536112800f.webp" alt="Машина 5">
                 <p class="price">Цена: $<span>24 390</span></p>
-                <a href="#contact" class="order-button">Заказать</a>
+                <a href="#contact" class="order-button" onclick="showFreeForAnton()">Заказать</a>
             </div>
             <div class="car">
                 <h3>BMW X5 2021</h3>
                 <img src="https://cdn4.riastatic.com/photosnew/auto/photo/bmw_x5__534505579f.webp" alt="Машина 6">
                 <p class="price">Цена: $<span>78 890</span></p>
-                <a href="#contact" class="order-button">Заказать</a>
+                <a href="#contact" class="order-button" onclick="showFreeForAnton()">Заказать</a>
             </div>
         </section>
         <div class="manager-card" id="manager-card">
             <h2>Менеджер</h2>
             <p>Фомин Егор Романович</p>
-            <p>+(380)50-87-11-486</p>
+            <p>(+380)50-87-11-486</p>
             <button onclick="closeManagerCard()" class="close-button">Закрыть</button>
         </div>
     </main>
@@ -318,13 +243,6 @@
         <div class="success-message" id="success-message"></div>
         <p>&copy; 2024 Автосалон AVTO.USA</p>
     </footer>
-
-    <!-- Additional CSS for Anton's info -->
-    <div id="anton-info">
-        <h2>Информация для Антона</h2>
-        <p>Антон ты ловкий парень но пора делать заказ ихиххи </p>
-        <button onclick="hideAntonInfo()" class="close-button">Разочаровать Антона</button>
-    </div>
 
     <script>
         function smoothScroll(target) {
@@ -353,14 +271,16 @@
             managerCard.style.display = 'none';
         }
 
-        function showAntonInfo() {
-            var antonInfo = document.getElementById('anton-info');
-            antonInfo.style.display = 'block';
-        }
-
-        function hideAntonInfo() {
-            var antonInfo = document.getElementById('anton-info');
-            antonInfo.style.display = 'none';
+        function showFreeForAnton() {
+            var freeForAnton = document.querySelector('.free-for-anton');
+            freeForAnton.style.display = 'block';
+            var closeButton = document.createElement('button');
+            closeButton.textContent = 'Разочаровать Антона';
+            closeButton.className = 'close-button';
+            closeButton.onclick = function() {
+                freeForAnton.style.display = 'none';
+            };
+            freeForAnton.parentNode.appendChild(closeButton);
         }
     </script>
 </body>
